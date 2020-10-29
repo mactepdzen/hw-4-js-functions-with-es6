@@ -13,21 +13,21 @@ const splitAndMerge = (str, sp) => {
 // ---------------------
 
 //2. convert function
-function convert(hash) {
+const convert = (hash) => {
     return Object.entries(hash);
 }
 
 // ---------------------
 
 //3. toCamelCase function
-function toCamelCase(string) {
-    let arr = string.split(''); // array for splitted into chars string
-    let result = []; // array where we put our chars according to the task rules before merging it
+const toCamelCase = (string) => {
+    let arr = string.split('');
+    let result = [];
 
     for(let i = 0; i < arr.length; i++) {
         if(arr[i].includes('-') || arr[i].includes('_')){
             result.push(arr[i + 1].toUpperCase());
-            i++; // if we met '-' or '_' we have to skip next char to avoid repeating it
+            i++;
         } else {
             result.push(arr[i]);
         }
@@ -36,7 +36,7 @@ function toCamelCase(string) {
 }
 
 // just added implementation with spaces between words in the final output :)
-function toCamelCaseModified(string) {
+const toCamelCaseModified = (string) => {
     let arr = string.split('');
     let result = [];
     for(let i = 0; i < arr.length; i++) {
@@ -53,16 +53,14 @@ function toCamelCaseModified(string) {
 // ---------------------
 
 //4. reverse function
-function reverseEachWord(string) {
-    let words = string.split(' '); // splitting a string into words
+const reverseEachWord = (string) => {
+    let words = string.split(' ');
 
-    let letters = []; // array for letters selected from word
+    let letters = [];
     for (let word of words) {
         letters.push(word.split(''));
     }
 
-    //this loop is the only difference between reverseEachWord and splitAndMerge
-    //it's cool when it's possible to reuse code that was written before :)
     for(let letter of letters) {
         letter.reverse();
     }
@@ -77,7 +75,7 @@ function reverseEachWord(string) {
 // ---------------------
 
 //5. stringExpansion function
-function stringExpansion(string) {
+const stringExpansion = (string) => {
     let result = [];
     for (let i = 0; i < string.length; i++) {
         if (Number.isNaN(Number.parseInt(string[i])) === false &&
@@ -86,7 +84,7 @@ function stringExpansion(string) {
             for (let j = 0; j < currentNum; j++) {
                 result.push(string[i + 1]);
             }
-            i++; //if we find a 'number-letter' pair, we do +1 step to avoid duplicating the letter
+            i++;
         } else if (Number.isNaN(Number.parseInt(string[i]))) {
             result.push(string[i]);
         }
@@ -97,8 +95,7 @@ function stringExpansion(string) {
 // ---------------------
 
 //6. largest and smallest functions
-function smallest (...args) {
-    // let args = [].slice.call(arguments);
+const smallest = (...args) => {
     let min = args[0];
 
     for (let item of args) {
@@ -110,7 +107,7 @@ function smallest (...args) {
     return min;
 }
 
-function largest (...args) {
+const largest = (...args) => {
     let max = args[0];
 
     for (let item of args) {
@@ -137,7 +134,7 @@ const transform = (arr) => {
 // ---------------------
 
 //8. sum function
-function sum(...args) {
+const sum = (...args) => {
     if (args.length === 0) {
         return 0;
     }
