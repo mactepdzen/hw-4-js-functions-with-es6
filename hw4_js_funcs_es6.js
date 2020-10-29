@@ -8,14 +8,14 @@ const splitAndMerge = (str, sp) => {
     }
 
     return result.join(' ');
-}
+};
 
 // ---------------------
 
 //2. convert function
 const convert = (hash) => {
     return Object.entries(hash);
-}
+};
 
 // ---------------------
 
@@ -33,7 +33,7 @@ const toCamelCase = (string) => {
     }
 
     return result.join('');
-}
+};
 
 // just added implementation with spaces between words in the final output :)
 const toCamelCaseModified = (string) => {
@@ -49,7 +49,7 @@ const toCamelCaseModified = (string) => {
     }
 
     return result.join('');
-}
+};
 
 // ---------------------
 
@@ -71,7 +71,7 @@ const reverseEachWord = (string) => {
         result.push(letter.join(''));
     }
     return result.join(' ');
-}
+};
 
 // ---------------------
 
@@ -91,7 +91,7 @@ const stringExpansion = (string) => {
     }
 
     return result.join('');
-}
+};
 
 // ---------------------
 
@@ -106,7 +106,7 @@ const smallest = (...args) => {
     }
 
     return min;
-}
+};
 
 const largest = (...args) => {
     let max = args[0];
@@ -118,7 +118,7 @@ const largest = (...args) => {
     }
 
     return max;
-}
+};
 
 // ---------------------
 
@@ -130,7 +130,7 @@ const transform = (arr) => {
         }
     })
     return transformedArr;
-}
+};
 
 // ---------------------
 
@@ -141,9 +141,9 @@ const sum = (...args) => {
     }
 
     return args.shift() + sum.apply(null, args);
-}
+};
 
-const sumModified = (...args) => args.reduce((total, current) => total + current, 0)
+const sumModified = (...args) => args.reduce((total, current) => total + current, 0);
 
 // ---------------------
 
@@ -156,4 +156,4 @@ const countDown = (number) => {
         --number;
         countDown(number)
     }, 1000);
-}
+};
