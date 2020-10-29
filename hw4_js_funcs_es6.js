@@ -21,32 +21,33 @@ const convert = (hash) => {
 
 //3. toCamelCase function
 const toCamelCase = (string) => {
-    let arr = string.split('');
-    let result = [];
+    let words = string.split(/[_-]/);
 
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i].includes('-') || arr[i].includes('_')){
-            result.push(arr[i + 1].toUpperCase());
-            i++;
-        } else {
-            result.push(arr[i]);
+    let result = [];
+    for (let item of words) {
+        if(item === words[0]) {
+            result.push(item);
+            continue;
         }
+        result.push(item[0].toUpperCase() + item.slice(1));
     }
+
     return result.join('');
 }
 
 // just added implementation with spaces between words in the final output :)
 const toCamelCaseModified = (string) => {
-    let arr = string.split('');
+    let words = string.split(/[_-]/);
+
     let result = [];
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i].includes('-') || arr[i].includes('_')){
-            result.push(` ${arr[i + 1].toUpperCase()}`);
-            i++;
-        } else {
-            result.push(arr[i]);
+    for (let item of words) {
+        if (item === words[0]) {
+            result.push(`${item} `);
+            continue;
         }
+        result.push(`${item[0].toUpperCase()}${item.slice(1)} `);
     }
+
     return result.join('');
 }
 
