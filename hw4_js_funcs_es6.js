@@ -55,20 +55,11 @@ const toCamelCaseModified = (string) => {
 
 //4. reverse function
 const reverseEachWord = (string) => {
-    let words = string.split(' ');
+    const words = string.split(' ');
 
-    let letters = [];
-    for (let word of words) {
-        letters.push(word.split(''));
-    }
-
-    for(let letter of letters) {
-        letter.reverse();
-    }
-
-    let result = [];
-    for (let letter of letters) {
-        result.push(letter.join(''));
+    const result = [];
+    for (let item of words) {
+        result.push(item.split('').reverse().join(''))
     }
     return result.join(' ');
 };
