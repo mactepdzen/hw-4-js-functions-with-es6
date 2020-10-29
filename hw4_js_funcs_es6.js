@@ -143,6 +143,8 @@ const sum = (...args) => {
     return args.shift() + sum.apply(null, args);
 }
 
+const sumModified = (...args) => args.reduce((total, current) => total + current, 0)
+
 // ---------------------
 
 //9. countDown function
