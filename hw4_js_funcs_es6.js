@@ -77,19 +77,19 @@ const reverseEachWord = (string) => {
 
 //5. stringExpansion function
 const stringExpansion = (string) => {
-    let result = [];
+    const result = [];
+
     for (let i = 0; i < string.length; i++) {
-        if (Number.isNaN(Number.parseInt(string[i])) === false &&
-            Number.isNaN(Number.parseInt(string[i + 1]))) {
-            let currentNum = Number.parseInt(string[i]);
-            for (let j = 0; j < currentNum; j++) {
+        if(!isNaN(string[i]) && isNaN(string[i + 1])) {
+            for (let j = 0; j < string[i]; j++) {
                 result.push(string[i + 1]);
             }
             i++;
-        } else if (Number.isNaN(Number.parseInt(string[i]))) {
+        } else if (isNaN(string[i])){
             result.push(string[i]);
         }
     }
+
     return result.join('');
 }
 
