@@ -1,15 +1,10 @@
 //1. splitAndMerge function
-function splitAndMerge(str, sp) {
-    const words = str.split(' '); // splitting a string into words
+const splitAndMerge = (str, sp) => {
+    const words = str.split(' ');
 
-    let letters = []; // array for letters selected from word
+    const result = [];
     for (let word of words) {
-        letters.push(word.split(''));
-    }
-
-    let result = [];
-    for (let letter of letters) {
-        result.push(letter.join(sp));
+        result.push(word.split('').join(sp));
     }
 
     return result.join(' ');
